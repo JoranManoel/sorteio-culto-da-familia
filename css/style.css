@@ -1,0 +1,304 @@
+:root {
+    --cor-primaria: #dc7676; 
+    --cor-primaria-opc: rgb(220, 118, 118, 0.7); 
+    --cor-secundaria: rgb(18, 157, 188); 
+    --cor-secundaria-opc: rgb(18, 157, 188, 0.6); 
+}
+  
+body{
+    color: rgb(83, 83, 85);
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background:linear-gradient(to left, rgba(212, 145, 145, 0.9),rgba(241, 6, 6, 0.3)), url(../img/white-background-with-wavy-line/3.jpg);
+    background-size: cover;
+    
+}
+header{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    color: var(--cor-primaria);
+    margin: 1%;
+    padding: 1%;
+    height: 28%;
+    /* width: 100%; */
+    /* padding: 20px;
+    padding-left: 6%; */
+}
+footer{
+    text-align: center;
+    background-color: var(--cor-primaria-opc);
+    width: 100%;
+    padding: 20px;
+}
+li{
+    list-style: none;
+}
+h1{
+    margin: 0%;
+}
+h3{
+    padding: 0%;
+    margin: 0%;
+}
+p{
+    padding: 0%;
+    margin: 0%;
+}
+main{
+    display: flex;
+    height: 60%;
+    margin-bottom: 20px;
+    margin: 1%;
+}
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+hr{
+    margin-top: 0%;
+}
+.pastor{
+    /* color: rgb(83, 83, 85); */
+    color: aliceblue;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    /* text-align: right; */
+    background-color: var(--cor-primaria-opc);
+    border-radius: 15px;
+    padding: 1%;
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 23vw;
+    font-size: medium;
+    /* align-content: center; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+}
+
+#nomePastores{
+    display: flex;
+    justify-content: space-around;
+}
+.logoIeadpe{
+    width: 70%;
+}
+.faixa{
+    width: 78vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin: 20px;
+    border-radius: 15px;
+}
+.sorteio{
+    width: 70%;
+    text-align: center;
+    padding: 10px;
+    overflow: hidden;
+}
+.patrocinador{
+    width: 30%;
+    padding: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.result{
+    display: flex;
+    height: 100%;
+}
+.resultado{
+    margin: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ganhadores{
+    width: 35%;
+    height: 70%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+.ganhadores::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55px; /* Altura do gradiente */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); /* Gradiente branco transparente para branco opaco */
+}
+.nomeSortiado{
+    width: 65%;
+}
+.titulo{
+    background-color: rgb(220, 118, 118, 0.7);
+    border-radius: 10px;
+    margin: 5px;
+    margin-bottom: 20px;
+    color: aliceblue;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    /* overflow: hidden; */
+
+}
+.imgPatrocinador{
+    width: 100px;
+    height: auto;
+    display: inline;
+    /* object-fit: cover; */
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+#casal{
+    font-size: 50px;
+    color: var(--cor-primaria);
+}
+#nome{
+    font-size: 3em;
+}
+#congregacao{
+    font-size: 2em;
+}
+#logoTitulo{
+    margin: 0;
+    padding: 0;
+    font-size: 80px;
+}
+#logoSubTitulo{
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    color: var(--cor-secundaria);
+}
+.pessoa{
+    background-color: var(--cor-secundaria-opc);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#congregacao{
+  padding: 0%;
+  margin: 0%;
+}
+
+/* Animação da lista dos nomes já sortiados */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.9s ease-in-out;
+}
+
+.shift-down {
+    animation: shiftDown 0.5s ease-in-out;
+}
+
+@keyframes shiftDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* Animação das imagens */
+#slider{
+    overflow: hidden;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 30s slider infinite;
+}
+#slider figure img{
+    float: left;
+    width: 20%;
+    border-radius: 5%;
+}
+@keyframes slider{
+    0% {left: 0;}
+    10% {left: 0;}
+    20% {left: -100%;}
+    30% {left: -100%;}
+    40% {left: -200%;}
+    50% {left: -200%;}
+    60% {left: -300%;}
+    70% {left: -300%;}
+    80% {left: -400%;}
+    90% {left: -400%;}
+}
+/* Loader */
+#loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-loader {
+    width: 100px;
+    height: 100px;
+    display: grid;
+    border:8px solid #0000;
+    border-radius: 50%;
+    border-color:var(--cor-secundaria) #0000;
+    animation: s6 1s infinite linear;
+  }
+  .custom-loader::before,
+  .custom-loader::after {    
+    content:"";
+    grid-area: 1/1;
+    margin:4px;
+    border:inherit;
+    border-radius: 50%;
+  }
+  .custom-loader::before {
+    border-color: var(--cor-primaria) #0000;
+    animation:inherit; 
+    animation-duration: .5s;
+    animation-direction: reverse;
+  }
+  .custom-loader::after {
+    margin:16px;
+  }
+  
+  @keyframes s6 { 
+    100%{transform: rotate(1turn)}
+  }
