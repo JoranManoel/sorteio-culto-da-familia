@@ -145,7 +145,7 @@ hr{
     width: 65%;
 }
 .titulo{
-    background-color: rgb(220, 118, 118, 0.7);
+    background-color: var(--cor-primaria-opc);
     border-radius: 10px;
     margin: 5px;
     margin-bottom: 20px;
