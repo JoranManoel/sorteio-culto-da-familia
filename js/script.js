@@ -1,17 +1,28 @@
+//CÓDIGO DE SORTEIO
+var esperar = false; //Aguarda o sorteio para quando apertar TAB ele não fique chamando a função
+let nomes
+
 async function carregarPresencas() {
     try {
-        let response = await fetch("127.0.0.1:80/a33/listar.php");
+        let response = await fetch("https://a33.rf.gd/listar.php");
+        // let response = await fetch("http://localhost:80/a33/listar.php");
         let data = await response.json();
         
         if (data.success) {
-            let nomes = data.presencas.map(p => `${p.id_casal};${p.nome};${p.nome_conjuge};${p.congregacao}`);
+            nomes = data.presencas.map(p => `${p.id_cadastro};${p.nome};${p.conjuge};${p.congregacao}`);
             
             // Verifica se há casais para o sorteio
             if (nomes.length === 0) {
                 alert("Nenhuma presença registrada hoje! Cadastre as presenças antes do sorteio.");
             } else {
                 console.log("Casais para o sorteio:", nomes);
-                // Aqui você pode adicionar o código para iniciar o sorteio
+                document.addEventListener("keydown", function(event) {
+                    if (event.key === "Tab") {
+                        if(esperar == false){
+                            sortear();
+                        }
+                    }
+                  });
             }
         } else {
             console.error("Erro ao carregar presenças:", data.message);
@@ -23,17 +34,6 @@ async function carregarPresencas() {
 
 // Chama a função para carregar os nomes antes do sorteio
 carregarPresencas();
-
-//CÓDIGO DE SORTEIO
-var esperar = false; //Aguarda o sorteio para quando apertar TAB ele não fique chamando a função
-
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Tab") {
-        if(esperar == false){
-            sortear();
-        }
-    }
-  });
 
 function sortear() {
     var nome = document.getElementById("nome");
